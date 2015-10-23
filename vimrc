@@ -4,24 +4,16 @@ call pathogen#infect()
 call pathogen#helptags()
 syntax on
 filetype plugin indent on
-
-:set mouse=a
-
-" Auto complete stuff
-autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
-set completeopt=longest,menuone
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-
+set mouse=a
 " Set the colour scheme
 colorscheme mustang
 
-"colorscheme badwolf
-
 " vim-gitgutter colours
+highlight NonText ctermfg=black guifg=black ctermbg=black
 highlight clear SignColumn
 highlight GitGutterAdd guibg=black
 
-let NERDTreeDirArrows = 0
+let NERDTreeDirArrows = 1
 
 let mapleader=","
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -85,13 +77,13 @@ nnoremap <Leader>k <C-w>k
 
 "------  Buffer Navigation  ------
 " Ctrl Left/h & Right/l cycle between buffers
-noremap <silent> <C-left> :bprev<CR>
-noremap <silent> <C-h> :bprev<CR>
-noremap <silent> <C-right> :bnext<CR>
-noremap <silent> <C-l> :bnext<CR>
+"noremap <silent> <C-left> :bprev<CR>
+"noremap <silent> <C-h> :bprev<CR>
+"noremap <silent> <C-right> :bnext<CR>
+"noremap <silent> <C-l> :bnext<CR>
 
 " ,q Closes the current buffer
-nnoremap <silent> <Leader>q :Bclose<CR>
+nnoremap <silent> <Leader>q :bd<CR>
 
 " ,Q Closes the current window
 nnoremap <silent> <Leader>Q <C-w>c
